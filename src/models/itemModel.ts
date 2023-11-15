@@ -5,25 +5,31 @@ const ItemSchema = new Schema<Car>(
 
     {
         name: {
-            type: String
+            type: String,
+            required: true,
         },
 
         color: {
-            type: String
+            type: String,
+            required: true,
         },
     
         gas: {
             type: String,
-            enum: ["gasoline", "electric"], 
+            enum: ["gasoline", "electric"],
+            required: true, 
         },
         year: {
-            type: Number
+            type: Number,
+            required: true,
         },
         description: {
-            type: String
+            type: String,
+            required: true,
         },
         price: {
-            type: Number  
+            type: Number,
+            required: true,
         },
     },
     {
@@ -32,6 +38,10 @@ const ItemSchema = new Schema<Car>(
     }
 
 );
+
+const ItemModel = model("items", ItemSchema);
+
+export default ItemModel;
 
 
 
